@@ -21,12 +21,12 @@ public class MethodsPeoples {
 
     public void iteratorAllPeoples(Peoples p) {
         for (int i = 1; i <= numb; i++) {
-           Peoples obj = getAllPeople(p, i);
+           Peoples obj = getAll(p, i);
            people.add(obj);
         }
     }
 
-    public Peoples getAllPeople(Peoples p, int count) {
+    public Peoples getAll(Peoples p, int count) {
         Type typeOfT = new TypeToken<Peoples>() {}.getType();
         String urls = url + count + "/";
         HttpResponse<JsonNode> jsonResponse = Unirest.get(urls).asJson();
@@ -37,7 +37,7 @@ public class MethodsPeoples {
         return p;
     }
 
-    public void getAllPeople() {
+    public void getAllPeoples() {
         people.removeAll(people);
         iteratorAllPeoples(peoples);
         for (Peoples user : people) {

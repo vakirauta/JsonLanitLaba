@@ -29,7 +29,7 @@ public class Main {
 //        methodsPlanets.getPlanetByName("Naboo");
 //        System.out.println("-----------------------------------------");
 //        1-метод
-        methodsFilms.getAll();
+        methodsFilms.getAllFilms();
         System.out.println("-----------------------------------------");
 //        2-метод
         methodsFilms.getFilmById(5);

@@ -21,12 +21,12 @@ public class MethodsPlanets {
 
     public void iteratorAllPlanets(Planets p) {
         for (int i = 1; i <= numb; i++) {
-            Planets obj = getAllPlanets(p, i);
+            Planets obj = getAll(p, i);
             planet.add(obj);
         }
     }
 
-    public Planets getAllPlanets(Planets p, int count) {
+    public Planets getAll(Planets p, int count) {
         Type typeOfT = new TypeToken<Planets>() {}.getType();
         String urls = url + count + "/";
         HttpResponse<JsonNode> jsonResponse = Unirest.get(urls).asJson();
