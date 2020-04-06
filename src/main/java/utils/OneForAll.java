@@ -24,7 +24,7 @@ public class OneForAll<T extends Object> {
     }
 
     public T getAll(T p, int count, String url){
-        Type itemsListType = new TypeToken<List<T>>() {}.getType();
+        Type itemsListType = new TypeToken<T>() {}.getType();
         String urls = url + count + "/";
         HttpResponse<JsonNode> jsonResponse = Unirest.get(urls).asJson();
         String json = jsonResponse.getBody().toString();
